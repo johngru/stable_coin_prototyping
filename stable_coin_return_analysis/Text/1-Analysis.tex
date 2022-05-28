@@ -1,0 +1,50 @@
+\section{Analysis}
+% Delete the text and write your Introduction here:
+%------------------------------------
+
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.48\textwidth]{Images/PNG-example.png}
+%    \caption{Example image in png format, taken by yours truly.}
+%    \label{fig:NTNU-letters}
+%\end{figure}
+
+For a general stable coin, its price is pegged to a constant value $c$.  That is, there are active market forces maintaining the price at its pegged price and the price of the coin will predominantly hold this value.  If its price is actively being maintained at $c$, then the average value ${\mu}$ of a stable coin's price will be equal to its pegged value.   That is, we assume:
+\begin{equation}
+    \mu = c
+\end{equation}
+For any time the price deviates from its peg, it can be traded and the total return $R_{TOT}$ is:
+\begin{equation}
+    R_{TOT} = \sum\limits_{j}{(P_{j} - \mu)/\mu},
+\end{equation}
+where $P_{j}$ is the current stable coin price off the peg value.  For simplicity, let's define the difference between the stable coin's price and peg value as $Z_{j}$ or $Z_{j} = (P_{j}-\mu)$.
+To find a relationship between $R_{TOT}$ and the volatility, we can make the following mathematical substitutions:
+\begin{equation}
+    R_{TOT}^2 = \frac{1}{\mu^2}[\sum_j{Z_j}]
+\end{equation}
+And letting $\mu^2 = 1$:
+\begin{equation}
+    R_{TOT}^2 = \sum_j{Z_j^2} + \sum\limits_{j\neq i}{Z_j Z_i}
+\end{equation}
+Now substituting in for $Z_j , Z_i$ and multiplying by an identity:
+
+\begin{equation}
+   R_{TOT}^2 = \sum_j{(P_{j}-\mu)^2} + \sum\limits_{j\neq i}{(P_{j}-\mu) (P_{i}-\mu)} \notag
+\end{equation}
+\begin{equation}
+        = \frac{N-1}{N-1} \times [\sum\limits_{j}{(P_{j}-\mu)^2} + \sum\limits_{j\neq i}{(P_{j}-\mu) (P_{i}-\mu)}] \notag
+\end{equation}
+\begin{equation}
+    = (N-1) \times [\sigma^2(P_j) + Cov_{i \neq j}(P_i,P_j)] 
+\end{equation}
+or taking the root of both sides relates the total return to the variance and covariance:
+\begin{equation}
+  \boxed{R_{TOT}=\sqrt{(N-1) \times [\sigma^2(P_j) + Cov_{i \neq j}(P_i,P_j)]}}
+\end{equation}
+
+
+
+%\subsection{Problem Description}
+%Consider using dividing the introduction and other sections of the report into different parts using %\verb+\subsection+. This will make the report more reader friendly. 
+

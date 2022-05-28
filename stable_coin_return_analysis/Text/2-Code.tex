@@ -1,0 +1,48 @@
+\section{Skeleton Code}
+\definecolor{light-gray}{gray}{0.95}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+% Delete the text and write your Theory/ Background Information here:
+%------------------------------------
+
+A code outline for running a trading bot on stable coins. \par
+\textbf{Skeleton Code:}
+\newline
+\code{def run(NOT STOP):}\\
+\code{\indent \indent peg = 1}\\
+\code{\indent \indent currency = "USD"} \\
+\code{\indent  \indent stable\_coin = "USDC"} \\
+\code{\indent \indent action = \{ 'BUY','SELL','HOLD' \} } \\
+\code{\indent \indent fees} \\
+\code{\indent \indent cost\_avg} \\
+\code{\indent \indent conditions = \{\}} \\
+\code{\indent \indent search = TRUE} \\
+\code{\indent \indent stop = FALSE} \\
+\code{\indent \indent current\_price = get\_price(stable\_coin)} \\
+\newline
+\code{\indent while(search):} \\
+\code{\indent \indent \indent previous\_price = current\_price} \\
+\code{\indent \indent \indent current\_price = get\_price(stable\_coin)} \\
+\code{\indent \indent \indent difference = price\_compare(current\_price,}
+\code{\indent \indent \indent \indent previous\_price)} \\
+\code{\indent \indent \indent action\_needed = action\_needed(difference,} \\
+\code{\indent \indent \indent \indent conditions)} \\ 
+\code{\indent \indent \indent if(action\_needed):} \\
+\code{\indent \indent \indent \indent search = FALSE} \\
+\code{\indent \indent \indent rest()}
+\newline
+\code{\indent \indent if(action\_needed == 'BUY'):} \\
+\code{\indent \indent \indent API\_request(buy\_action)} \\
+\code{\indent \indent \indent update(portfolio, cost\_avg)} \\
+\code{\indent \indent \indent search = TRUE}
+\newline
+\code{\indent \indent if(action\_needed == 'SELL'):} \\
+\code{\indent \indent \indent API\_request(sell\_action)} \\
+\code{\indent \indent \indent update(portfolio, cost\_avg)} \\
+\code{\indent \indent \indent search = TRUE}
+\newline
+\code{\indent \indent if(action\_needed == 'STOP'):} \\
+\code{\indent \indent \indent stop = TRUE}
+
+%\code{\indent  while(search):} \\
+%\code{\indent \indent  current_price = get_price(stable_coin)} \\
+
